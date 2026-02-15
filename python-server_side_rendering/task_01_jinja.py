@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+"""Basic HTML template in flask"""
+from flask import Flask, render_template
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    """" route for home page"""
+    return render_template('index.html')
+@app.route('/about')
+def about():
+    """"route for about page"""
+    return render_template('about.html')
+@app.route('/contact')
+def contact():
+    """ route for contact page """
+    return render_template('contact.html')
+
+if __name__ == '__main__':
+    app.run(debug=True,port=5000)
